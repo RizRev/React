@@ -14,14 +14,17 @@ import Checkout from './pages/Checkout'
 import MyBag from './pages/MyBag'
 import SellingProduct from './pages/SellingProduct'
 import {BrowserRouter,Route,Link,Routes,Navigate} from 'react-router-dom'
+import AuthChecker from './components/AuthChecker'
 
 function App() {
   const [title,setTitle] = useState("E coomerce")
   return (
+    
     <div className="App">
       <header className="App-header">
         {title}
       </header>
+      {/* <NavBar /> */}
       <BrowserRouter>
         <nav className='bg-info'>
             <Link to="/">Home</Link>
@@ -55,7 +58,11 @@ function App() {
         <Routes>
           <Route path='/' element={<Navigate to='/home' />} replace="true" />
           <Route path='/home' element={<Home />} />
-          <Route path='/product' element={<Product />} />
+          <Route path='/product' element={
+          <AuthChecker>
+            <Product />
+          </AuthChecker>
+           } />
           <Route path='/about' element={<About />} />
           <Route path='/profile' element={<Profile />} />
           <Route path='/Login_cust' element={<Login_cust />} />

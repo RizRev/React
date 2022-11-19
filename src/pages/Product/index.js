@@ -16,7 +16,6 @@ export default function Product() {
     name: "",
     stock: "",
     price: "",
-    category_id: "",
     search: ""
   })
   const [sortBy,setSortBy] = useState("name")
@@ -80,7 +79,11 @@ export default function Product() {
 
   let users = `http://localhost:4000/products?sortby=${sortBy}&sort=${sort}&search=${inputData.search}&limit=100`
   const getData = ()=> {
-    axios.get(users)
+    let token = localStorage.getItem("token")
+    console.log("my token",token)
+    axios.get(users,{headers:{
+      "Authorization" : `Bearer ${token}`
+    }})
     .then((res)=>{
         console.log("get data success")
         console.log(res.data.data)
@@ -94,8 +97,12 @@ export default function Product() {
         console.log("get data fail")
         console.log(err)
         setData([])
-        setMessageShow(true)
-      setMessage({title:"fail",text:"get data fail",type:"danger"})
+        err.response.data.message == 'server need token' &&  setMessageShow(true)
+        err.response.data.message == 'server need token' &&   setMessage({title:"belum login",text:"user must login",type:"danger"})
+        
+        err.response.data.message !== 'server need token' &&  setMessageShow(true)
+        err.response.data.message !== 'server need token' &&   setMessage({title:"fail",text:"get data fail",type:"danger"})
+  
       messageTime()
     })
   }

@@ -41,7 +41,7 @@ export default function checkout() {
             <div className='card-body'>
             </div>
         </div>
-        <div className='d-flex justify-content-center ml-5'>
+        <div className='d-flex justify-content-center'>
         <Button  className='rounded-pill' style={{width: 150}}variant="danger" type="submit">
         Jual
         </Button>
