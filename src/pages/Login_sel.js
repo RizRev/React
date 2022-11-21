@@ -1,11 +1,13 @@
 import React, {useState} from 'react'
+import './login.css'
 import { loginUser } from '../redux/actions/login';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
+
 
 
 
@@ -31,15 +33,15 @@ export default function Login() {
       <h5 className='d-flex mt-5 justify-content-center' >Please login with your account</h5>
       <Container style={{width: 300}}>
       <ButtonGroup className='text-danger d-flex mt-5 justify-content-center'>
-        <button className='btn btn-light btn-sm' >customer</button>
+      <Link to="/Login_cust" ><button className='btn btn-light btn-sm' >customer</button></Link>
         <button className='btn btn-danger btn-sm' >seller</button>
       </ButtonGroup>
       </Container>
 
-      <form onSubmit={postData} className='container mt-5 col-3'>
-              <input type="email" className="form-control mb-2" value={email} name="email" onChange={(e)=>setEmail(e.target.value)} placeholder="email"/>
-              <input type="password" className="form-control mb-2" value={password} name="password" onChange={(e)=>setPassword(e.target.value)} placeholder="password"/>
-              <button type='submit' className='btn btn-danger'>login</button>
+      <form onSubmit={postData} className='form2 container mt-5 col-5'>
+              <input type="email" style={{width: 400}} className="form-control mb-2" value={email} name="email" onChange={(e)=>setEmail(e.target.value)} placeholder="email"/>
+              <input type="password" style={{width: 400}} className="form-control mb-2" value={password} name="password" onChange={(e)=>setPassword(e.target.value)} placeholder="password"/>
+              <button type='submit' style={{width: 400}} className='btn btn-danger rounded-pill'>login</button>
         </form>
 
       {/* <Form onSubmit={postData}>

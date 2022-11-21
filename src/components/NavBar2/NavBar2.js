@@ -1,4 +1,7 @@
-import './Navbar2.css';
+import React, { useEffect } from 'react'
+import {Link} from 'react-router-dom'
+import {useSelector} from 'react-redux'
+import styles from './Navbar2.module.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import cart from './cart.png'
 import Button from 'react-bootstrap/Button';
@@ -8,8 +11,21 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import logologout from './logout-512.webp'
 
 const NavBar2 = () => {
+    const logout = () => {
+        localStorage.clear()
+        window.location.reload(false)
+      }
+      const token = localStorage.getItem("token")
+    
+      const user = useSelector((state)=>state.user.user)
+    
+      useEffect(()=>{
+        console.log(user)
+      },[user])
+    
     return (
                 <Navbar bg='light' expand="lg">
             <Container>
@@ -37,9 +53,15 @@ const NavBar2 = () => {
                 <Button  className='rounded-pill me-4' style={{width: 125}}variant="danger" type="submit">
                 Login
                 </Button>
-                <Button  className='rounded-pill' style={{width: 125}}variant="outline-secondary" type="submit">
+                <Button  className='rounded-pill me-4' style={{width: 125}}variant="outline-secondary" type="submit">
             Signup
             </Button>
+            {token &&
+            <Button variant='light' onClick={()=>logout()}>
+            <img src={logologout} className={styles.button3} alt="" />
+            </Button>}
+            
+            
                 </div>
                 </Navbar.Collapse>
             </Container>

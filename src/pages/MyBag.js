@@ -3,10 +3,12 @@ import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import NavBar1 from '../components/NavBar1/Navbar';
 
 export default function checkout() {
   return (
     <div>
+      <NavBar1 />
       <Container  >
         <h2>My Bag</h2>
         <div className='card mb-3'style={{width: 800}}>

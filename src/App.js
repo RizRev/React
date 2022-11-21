@@ -1,3 +1,5 @@
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 import {useState} from 'react'
 import About from './pages/About'
 import Home from './pages/Home'
