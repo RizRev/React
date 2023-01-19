@@ -1,0 +1,17 @@
+.card{
+    text-decoration: none;
+    color: black;
+    /* display: flex; */
+    margin: 15px;
+    border-radius: 15px;
+    background-color: rgb(203, 203, 203);
+    width: 250px;
+    height: 300px;
+}
+
+.luar{
+    /* background-color: blue; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}

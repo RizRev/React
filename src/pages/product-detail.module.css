@@ -1,0 +1,17 @@
+.foto{
+    width: 400px;
+    height: 400px;
+}
+
+.pencet{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.sejajar{
+    /* background-color: aqua; */
+    /* margin-top: 10px; */
+    gap: 8px;
+    display: flex;
+}

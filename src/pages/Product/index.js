@@ -2,8 +2,11 @@ import React,{useState,useEffect} from 'react'
 import axios from 'axios'
 import styles from'./Product.module.css'
 import Alert from "../../components";
+import NavBar from "../../components/NavBar1/Navbar"
+import Addproduct from '../../components/Add Product/addproduct';
 
 export default function Product() {
+  let id = localStorage.getItem("id")
   const [data,setData] = useState([])
   const [photo,setPhoto] = useState(null)
   const [message,setMessage]  = useState({
@@ -13,6 +16,8 @@ export default function Product() {
   })
   const [messageShow,setMessageShow]  = useState(true)
   const [inputData, setInputData] = useState({
+    // users_id: id,
+    id: "",
     name: "",
     stock: "",
     price: "",
@@ -58,6 +63,7 @@ export default function Product() {
     selected ? setOnedit(true) : setOnedit(false)
     !selected  && setInputData({
       ...inputData,
+      id: "",
       name: "",
       stock: "",
       price: "",
@@ -80,6 +86,8 @@ export default function Product() {
   let users = `http://localhost:4000/products?sortby=${sortBy}&sort=${sort}&search=${inputData.search}&limit=100`
   const getData = ()=> {
     let token = localStorage.getItem("token")
+    let id = localStorage.getItem("id")
+    console.log("my id",id)
     console.log("my token",token)
     axios.get(users,{headers:{
       "Authorization" : `Bearer ${token}`
@@ -110,6 +118,7 @@ export default function Product() {
   const postForm = (e) => {
     e.preventDefault()
     const formData = new FormData()
+    formData.append("id",inputData.name)
     formData.append("name",inputData.name)
     formData.append("stock",inputData.stock)
     formData.append("price",inputData.price)
@@ -117,8 +126,11 @@ export default function Product() {
     formData.append("photo",photo)
     console.log(formData)
     if(!selected){
+      let token = localStorage.getItem("token")
       axios.
-      post('http://localhost:4000/products',formData,{
+      post('http://localhost:4000/products',formData,{headers:{
+        "Authorization" : `Bearer ${token}`
+      }},{
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -174,27 +186,27 @@ export default function Product() {
 
   return (
     <div>
+      <NavBar/>
+      {/* <Addproduct/> */}
 
 
 
       {/* post data */}
-      <form onSubmit={postForm} className="container mt-3 p-2 border border-3 ">
-        <div className="d-flex flex-row">
-        <input className="form-control"  type="text" value={inputData.name} name="name" onChange={handleChange} placeholder="nama"/>
-        <input  className="form-control" type="number" value={inputData.stock} name="stock" onChange={handleChange} placeholder="stock"/>
-        </div>
-        <div className="d-flex flex-row">
-        <input  className="form-control" type="number" value={inputData.price} name="price" onChange={handleChange} placeholder="price"/>
-        <input  className="form-control" type="number" value={inputData.category_id} name="category_id" onChange={handleChange} placeholder="category_id"/>
-        <input className="form-control"  type="file" name="photo" onChange={handlePhoto} placeholder="photo" required/>
-        </div>
+      <form onSubmit={postForm} className="container mt-3 p-2 border border-3 rounded border-danger ">
+        {onedit ? <h4>Edit Product</h4> : <h4>Add Product</h4> }
+        {/* <h4>Add Recipe</h4> */}
+        <input  className="form-control" style={{marginBottom: "15px"}}  type="text" value={inputData.name} name="name" onChange={handleChange} placeholder="nama"/>
+        <input  className="form-control" style={{width: "45%", marginBottom:"15px"}} type="number" value={inputData.stock} name="stock" onChange={handleChange} placeholder="stock"/>
+        <input  className="form-control" type="number" style={{width: "45%", marginBottom:"15px"}} value={inputData.price} name="price" onChange={handleChange} placeholder="price"/>
+        <input  className="form-control" type="number" style={{width: "45%", marginBottom:"15px"}} value={inputData.category_id} name="category_id" onChange={handleChange} placeholder="category_id"/>
+        <input className="form-control"  type="file" name="photo" onChange={handlePhoto} style={{marginBottom: "15px"}} placeholder="photo" required/>
           {
             onedit ? 
-              <button className='btn btn-primary' type="submit">
+              <button className='btn btn-danger' type="submit">
                 update
               </button>            
             :
-              <button className='btn btn-primary' type="submit">
+              <button className='btn btn-danger' type="submit">
                 post
               </button>
 
@@ -202,17 +214,17 @@ export default function Product() {
       </form>
 
       {/* filter */}
-      <div className="container bg-info mt-2 p-2 rounded">
+      <div className="container bg-danger mt-2 p-2 rounded">
         Filter
       <div className="container d-flex flex-row">
         <div className="">
-          <div className={`btn ${sortBy=="name"? "btn-primary":"btn-secondary"} ms-1`} onClick={()=>setSortBy("name")}>name</div>
-          <div className={`btn ${sortBy=="stock"? "btn-primary":"btn-secondary"} ms-1`} onClick={()=>setSortBy("stock")}>stock</div>
-          <div className={`btn ${sortBy=="price"? "btn-primary":"btn-secondary"} ms-1`} onClick={()=>setSortBy("price")}>price</div>
+          <div className={`btn ${sortBy=="name"? "btn-light":"btn-danger"} ms-1`} onClick={()=>setSortBy("name")}>name</div>
+          <div className={`btn ${sortBy=="stock"? "btn-light":"btn-danger"} ms-1`} onClick={()=>setSortBy("stock")}>stock</div>
+          <div className={`btn ${sortBy=="price"? "btn-light":"btn-danger"} ms-1`} onClick={()=>setSortBy("price")}>price</div>
         </div>
         <div className="ms-1 border-start border-dark">
-          <div className={`btn ${sort=="asc"? "btn-primary":"btn-secondary"} ms-1`} onClick={()=>setSort("asc")}>asc</div>
-          <div className={`btn ${sort=="desc"? "btn-primary":"btn-secondary"} ms-1`} onClick={()=>setSort("desc")}>desc</div>
+          <div className={`btn ${sort=="asc"? "btn-light":"btn-danger"} ms-1`} onClick={()=>setSort("asc")}>asc</div>
+          <div className={`btn ${sort=="desc"? "btn-light":"btn-danger"} ms-1`} onClick={()=>setSort("desc")}>desc</div>
         </div>
         <div className="search ms-2">
         <input type="text" className="form-control" value={inputData.search} name="search" onChange={handleChange} placeholder="search"/>

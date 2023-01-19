@@ -5,18 +5,23 @@ import About from './pages/About'
 import Home from './pages/Home'
 import Product from './pages/Product'
 import Profile from './pages/Profile'
-import Login_cust from './pages/Login_cust'
-import Login_sel from './pages/Login_sel'
-import SignUp_sel from './pages/SignUp_sel'
-import SignUp_cus from './pages/SignUp_cus'
-import ResetPW from './pages/ResetPW'
-import ConfirmPW from './pages/ConfirmPW'
-import Loginpw from './pages/Loginpw'
+import Login_cus from './pages/Login/Login_cust'
+import Login_sel from './pages/Login/Login_sel'
+import SignUp_sel from './pages/Login/SignUp_sel'
+import SignUp_cus from './pages/Login/SignUp_cus'
+import ResetPW from './pages/Login/ResetPW'
+import ConfirmPW from './pages/Login/ConfirmPW'
+import Loginpw from './pages/Login/Loginpw'
 import Checkout from './pages/Checkout'
 import MyBag from './pages/MyBag'
+import ProductDetail from "./pages/product-detail";
 import SellingProduct from './pages/SellingProduct'
 import {BrowserRouter,Route,Link,Routes,Navigate} from 'react-router-dom'
 import AuthChecker from './components/AuthChecker'
+import MyOrderSeller from "./pages/MyorderCustomer";
+import DetailOrder from "./pages/DetailOrder";
+
+
 
 function App() {
   const [title,setTitle] = useState("E coomerce")
@@ -37,7 +42,7 @@ function App() {
           
             <Link to="/profile">Profile</Link>
 
-            <Link to="/Login_cust">Login_cust</Link>
+            <Link to="/Login_cus">Login_cus</Link>
 
             <Link to="/Login_sel">Login_sel</Link>
 
@@ -56,6 +61,13 @@ function App() {
             <Link to="/MyBag">MyBag</Link>
 
             <Link to="/SellingProduct">SellingProduct</Link>
+
+            <Link to="/product-detail/:id"> Product Detail</Link>
+
+            <Link to="/myorder/seller"> Checkout</Link>
+
+            <Link to="/detailorder/:id"> DetailOrder</Link>
+
         </nav>
         <Routes>
           <Route path='/' element={<Navigate to='/home' />} replace="true" />
@@ -65,9 +77,10 @@ function App() {
             <Product />
           </AuthChecker>
            } />
+          <Route path="/product-detail/:id" element={<ProductDetail />} />
           <Route path='/about' element={<About />} />
           <Route path='/profile' element={<Profile />} />
-          <Route path='/Login_cust' element={<Login_cust />} />
+          <Route path='/Login_cus' element={<Login_cus />} />
           <Route path='/Login_sel' element={<Login_sel />} />
           <Route path='/SignUp_sel' element={<SignUp_sel />} />
           <Route path='/SignUp_cus' element={<SignUp_cus />} />
@@ -77,6 +90,10 @@ function App() {
           <Route path='/Checkout' element={<Checkout />} />
           <Route path='/MyBag' element={<MyBag />} />
           <Route path='/SellingProduct' element={<SellingProduct />} />
+          <Route path="/myorder/seller" element={<MyOrderSeller />}></Route>
+          <Route path="/detailorder/:id" element={<DetailOrder />}></Route>
+
+
         </Routes>
       </BrowserRouter>
     </div>

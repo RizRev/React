@@ -23,7 +23,7 @@ export default function Home() {
     </Button>
     </div>
     
-    <p className=' d-flex justify-content-center mt-4' >Don't have a Blanja account? <a className='text-danger' href="">Register</a> </p>
+    {/* <p className=' d-flex justify-content-center mt-4' >Don't have a Blanja account? <a className='text-danger' href="">Register</a> </p> */}
     
   </Form>
     </Container>
