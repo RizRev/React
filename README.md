@@ -1,70 +1,121 @@
-# Getting Started with Create React App
+<h1 align="center">Blanja</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <img height="150" src="https://github.com/RizRev/React/blob/main/src/components/NavBar2/Vector.png"  />
+</p>
+ <p align="center">
+    All easy to buy clothes in Blanja
+  </p>
 
-## Available Scripts
+<!-- TABLE OF CONTENTS -->
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built with</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#screenshots">Screenshots</a></li>
+    <li><a href="#related-project">Related Project</a></li>
+    <li><a href="#license">License</a></li>
+  </ol>
+</details>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## About The Project
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Blanja is a web-based application for purchasing clothes with consumer and shop users.
 
-### `npm test`
+### Built With
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This app was built with some technologies below:
 
-### `npm run build`
+- [React Js](https://reactjs.org)
+- [Bootstrap](https://www.npmjs.com/package/bootstrap)
+- [Sweetalert2](https://www.npmjs.com/package/sweetalert2)
+- [react-router-dom](https://www.npmjs.com/package/react-router-dom)
+- [Redux](https://www.npmjs.com/package/redux)
+- [React-redux](https://www.npmjs.com/package/react-redux)
+- [Redux-logger](https://www.npmjs.com/package/redux-logger)
+- [Redux-thunk](https://www.npmjs.com/search?q=redux-thunk)
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS?retiredLocale=id)
+- [Javascript](https://www.javascript.com/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<!-- GETTING STARTED -->
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Installation
 
-### `npm run eject`
+- Clone This Front End Repo
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+git clone https://github.com/RizRev/React
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Go To Folder Repo
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+cd Frontend-Shop.id
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Install Module
 
-## Learn More
+```
+npm install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Screenshots
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+| Register Page  
+| ------------------------------------------------------------------------------------------------------------
+| ![Register](https://github.com/RizRev/React/blob/main/src/asset/register.png "Register Page")
 
-### Code Splitting
+| Login                                                                           |
+| ------------------------------------------------------------------------------- |
+| ![Login](https://github.com/RizRev/React/blob/main/src/asset/login.png "Login") |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+| Landing Page                                                                                 |
+| -------------------------------------------------------------------------------------------- |
+| ![Landing Page](https://github.com/RizRev/React/blob/main/src/asset/home.png "Landing Page") |
 
-### Analyzing the Bundle Size
+| Product Detail                                                                                               |
+| ------------------------------------------------------------------------------------------------------------ |
+| ![Product Detail](https://github.com/RizRev/React/blob/main/src/asset/profuct%20detail.png "Product Detail") |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+| My Bag                                                                               |
+| ------------------------------------------------------------------------------------ |
+| ![My Bag](https://github.com/RizRev/React/blob/main/src/asset/my%20bag.png "My Bag") |
 
-### Making a Progressive Web App
+| My Product                                                                                        |
+| ------------------------------------------------------------------------------------------------- |
+| ![My Product](https://github.com/RizRev/React/blob/main/src/asset/add%20product.png "My Product") |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+| My Order |
+| -------- |
 
-### Advanced Configuration
+| ![My Order](https://github.com/RizRev/React/blob/main/src/asset/my%20order.png "My Order")
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+| Profile Custommer                                                                                        |
+| -------------------------------------------------------------------------------------------------------- |
+| ![Profile Custommer](https://github.com/RizRev/React/blob/main/src/asset/profil.png "Profile Custommer") |
 
-### Deployment
+## Related Project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- [`BACKEND SHOP.ID`](https://github.com/RizRev/tugas-backend-intermediete/tree/baru)
 
-### `npm run build` fails to minify
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Distributed under the [REV](/LICENSE) License.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
