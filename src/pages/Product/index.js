@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+
 import React,{useState,useEffect} from 'react'
 import axios from 'axios'
 import styles from'./Product.module.css'

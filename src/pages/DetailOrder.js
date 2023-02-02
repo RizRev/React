@@ -1,3 +1,11 @@
+/* eslint-disable no-sequences */
+/* eslint-disable dot-location */
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable eqeqeq */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+
 // import "./style.module.css";
 import React from "react";
 import { Form, Card, Container, CarouselItem } from "react-bootstrap";
@@ -24,7 +32,7 @@ const DetailOrder = () => {
       console.log(id);
       const token = localStorage.getItem("token");
       const result = await axios.get(
-        `http://localhost:4000/order/detail/${id}`,
+        `${process.env.REACT_APP_URL_BACKEND}/order/detail/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

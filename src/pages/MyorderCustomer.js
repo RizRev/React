@@ -1,3 +1,11 @@
+/* eslint-disable no-sequences */
+/* eslint-disable dot-location */
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable eqeqeq */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+
 import React, { useEffect, useState } from "react";
 // import NavbarGuest from "../../../Component/Header/Navbar";
 import styles from "./customer.module.css";

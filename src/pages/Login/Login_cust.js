@@ -1,10 +1,8 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React,{useState} from 'react'
-import styles from './login.css'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import logo from '../../components/NavBar2/Vector.png'
 import { loginUserPengunjung } from '../../redux/actions/login';

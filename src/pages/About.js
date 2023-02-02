@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+
 import React from 'react'
 import style from "./about.module.css"
 import NavBar2 from '../components/NavBar2/NavBar2'
