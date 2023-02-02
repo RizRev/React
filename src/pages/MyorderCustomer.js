@@ -17,7 +17,7 @@ const MyOrderCustomer = () => {
     try {
       const token = localStorage.getItem("token");
       const result = await axios.get(
-        `http://localhost:4000/users`,
+        `${process.env.REACT_APP_URL_BACKEND}/users`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -38,7 +38,7 @@ const MyOrderCustomer = () => {
     try {
       const token = localStorage.getItem("token");
       const result = await axios.get(
-        `http://localhost:4000/order`,
+        `${process.env.REACT_APP_URL_BACKEND}/order`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

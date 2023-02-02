@@ -30,7 +30,7 @@ export default function Product() {
   const [temp,setTemp] = useState(null)
 
   const deleteData = () => {
-    axios.delete(`http://localhost:4000/products/${selected}`)
+    axios.delete(`${process.env.REACT_APP_URL_BACKEND}/products/${selected}`)
     .then((res)=>{
         console.log("delete data success")
         console.log(res)
@@ -83,7 +83,7 @@ export default function Product() {
     getData()
   },[])
 
-  let users = `http://localhost:4000/products?sortby=${sortBy}&sort=${sort}&search=${inputData.search}&limit=100`
+  let users = `${process.env.REACT_APP_URL_BACKEND}/products?sortby=${sortBy}&sort=${sort}&search=${inputData.search}&limit=100`
   const getData = ()=> {
     let token = localStorage.getItem("token")
     let id = localStorage.getItem("id")
@@ -128,7 +128,7 @@ export default function Product() {
     if(!selected){
       let token = localStorage.getItem("token")
       axios.
-      post('http://localhost:4000/products',formData,{headers:{
+      post(`${process.env.REACT_APP_URL_BACKEND}/products`,formData,{headers:{
         "Authorization" : `Bearer ${token}`
       }},{
         headers: {
@@ -150,7 +150,7 @@ export default function Product() {
     })
   } else {
     axios.
-    put(`http://localhost:4000/products/${selected}`,formData,{
+    put(`${process.env.REACT_APP_URL_BACKEND}/products/${selected}`,formData,{
       headers: {
         "Content-Type": "multipart/form-data",
       },

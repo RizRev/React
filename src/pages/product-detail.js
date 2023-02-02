@@ -33,7 +33,7 @@ export default function Profile() {
     const getData = async () => {
       const res = await axios({
         method: "GET",
-        url: `http://localhost:4000/products/${id}`,
+        url: `${process.env.REACT_APP_URL_BACKEND}/products/${id}`,
         headers: {
           authorization: `Bearer ${token}`,
         },
@@ -48,7 +48,7 @@ export default function Profile() {
       console.log(token, "token addbag");
       await axios({
         method: "POST",
-        url:`http://localhost:4000/bag`,
+        url:`${process.env.REACT_APP_URL_BACKEND}/bag`,
         data: add,
         headers: {
           authorization: `Bearer ${token}`,

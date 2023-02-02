@@ -3,7 +3,7 @@ import axios from "axios";
 export const  loginUser = (data,navigate) => async (dispact) =>{
     try{
         dispact({type:"USER_LOGIN_PENDING"})
-        const result = await axios.post("http://localhost:4000/users/login",data)
+        const result = await axios.post(`${process.env.REACT_APP_URL_BACKEND}/users/login`,data)
         const user = result.data.data
         localStorage.setItem("id",user.id)
         localStorage.setItem("token",user.token)
@@ -19,7 +19,7 @@ export const  loginUser = (data,navigate) => async (dispact) =>{
 export const  loginUserPengunjung = (data,navigate) => async (dispact) =>{
     try{
         dispact({type:"USER_LOGIN_PENDING"})
-        const result = await axios.post("http://localhost:4000/users/login",data)
+        const result = await axios.post(`${process.env.REACT_APP_URL_BACKEND}/users/login`,data)
         const user = result.data.data
         localStorage.setItem("token",user.token)
         dispact({type:"USER_LOGIN_SUCCESS",payload: user})

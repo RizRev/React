@@ -20,7 +20,7 @@ export default function Checkout() {
     try {
       const token = localStorage.getItem("token");
       const result = await axios.get(
-        `http://localhost:4000/bag`,
+        `${process.env.REACT_APP_URL_BACKEND}/bag`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -35,7 +35,7 @@ export default function Checkout() {
   const deleteData = async (id) => {
     //sending
     await axios.delete(
-      `http://localhost:4000/bag/delete/${id}`,
+      `${process.env.REACT_APP_URL_BACKEND}/bag/delete/${id}`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -54,7 +54,7 @@ export default function Checkout() {
       console.log("ini checkout",checkout);
       console.log(token);
       await axios.post(
-        `http://localhost:4000/order`,
+        `${process.env.REACT_APP_URL_BACKEND}/order`,
         checkout,
         {
           headers: {
@@ -63,7 +63,7 @@ export default function Checkout() {
         }
       );
       await axios.delete(
-        `http://localhost:4000/bag/delete/${bag[0].id}`,
+        `${process.env.REACT_APP_URL_BACKEND}/bag/delete/${bag[0].id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
