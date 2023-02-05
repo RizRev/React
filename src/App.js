@@ -42,7 +42,7 @@ function App() {
       </header>
       {/* <NavBar /> */}
       <BrowserRouter>
-        {/* <nav className='bg-info'>
+        <nav className='bg-info'>
             <Link to="/">Home</Link>
           
             <Link to="/product">Product</Link>
@@ -77,7 +77,7 @@ function App() {
 
             <Link to="/detailorder/:id"> DetailOrder</Link>
 
-        </nav> */}
+        </nav>
         <Routes>
           <Route path='/' element={<Navigate to='/home' />} replace="true" />
           <Route path='/home' element={<Home />} />

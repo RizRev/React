@@ -2,6 +2,8 @@ import React,{useState,useEffect} from 'react'
 import axios from 'axios'
 import styles from'./Profile.module.css'
 import DatePicker from "react-datepicker";
+import profileku from "../../asset/profilku.png"
+import NavBar from '../../components/NavBar1/Navbar';
 
 import "react-datepicker/dist/react-datepicker.css";
 export default function Profile() {
@@ -22,6 +24,7 @@ export default function Profile() {
     },[])
   return (
     <div className='bg-light w-100 h-100'>
+        <NavBar/>
         {/* <ul>
             <li>
         {data ? data.name : "data not found"}
@@ -48,7 +51,8 @@ export default function Profile() {
                                 </div>
                                 <div className='col col-9'>
                                 <input type="text" className="form-control" 
-                                value={data ? data.name : "data not found"}
+                                value={"Revan"}
+                                // value={data ? data.name : "data not found"}
                                 />
                             </div>
                         </div>
@@ -58,7 +62,19 @@ export default function Profile() {
                                 </div>
                                 <div className='col col-9'>
                                 <input type="text" className="form-control" 
-                                value={data ? data.email : "data not found"}
+                                // value={data ? data.email : "data not found"}
+                                value={"rizkyrevanda@gmail.com"}
+                                />
+                            </div>
+                        </div>
+                        <div className='col col-12 row '>
+                                <div className='col col-3'>
+                                    Address
+                                </div>
+                                <div className='col col-9'>
+                                <input type="text" className="form-control" 
+                                // value={data ? data.email : "data not found"}
+                                value={"Jakarta Selatan"}
                                 />
                             </div>
                         </div>
@@ -68,12 +84,13 @@ export default function Profile() {
                                 </div>
                                 <div className='col col-9'>
                                 <input type="text" className="form-control" 
-                                value={data ? data.phone : "data not found"}
+                                // value={data ? data.phone : "data not found"}
+                                value={"081081081"}
                                 />
                             </div>
                         </div>
-                            <div className='col col-12 row '>
-                                <div className='col col-3'>
+                            {/* <div className='col col-12 row '> */}
+                                {/* <div className='col col-3'>
                                   Gender
                                 </div>
                                 <div className='col col-9 row'>
@@ -88,21 +105,26 @@ export default function Profile() {
                                <div>
                             </div>
                                 </div>
-                            </div>
+                            </div> */}
                             <div className='col col-12 row  mt-3'>
                                 <div className='col col-3'>
                                     Date of birth
                                 </div>
                                 <div className='col col-9'>
-                                <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
-
+                                {/* <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} /> */}
+                                <input type="text" className="form-control" 
+                                // value={data ? data.phone : "data not found"}
+                                value={"07/08/1999"}
+                                />
                             </div>
                             </div>
-                        </div>
+                            <button className='btn btn-danger mt-3'>Update</button>
+                        {/* </div> */}
                     </div>
                         <div className='col col-4'>
-                        <img src="https://res.cloudinary.com/demo/image/facebook/65646572251.jpg" className={styles.image}alt="..."/>
+                        <img src={profileku} className={styles.image}alt="..."/>
                         </div>
+                        
                 </div>
         </div>
 

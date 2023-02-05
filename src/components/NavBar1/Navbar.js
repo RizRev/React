@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import cart from './cart.png'
 import mail from './mail.png'
 import bell from './bell.png'
-import muka from './Profil.png'
+import muka from '../../asset/profilku.png'
 import Button from 'react-bootstrap/Button';
 import logo from './Vector.png'
 import Container from 'react-bootstrap/Container';
@@ -39,7 +39,7 @@ const NavBar = () => {
                     <img className='me-4' src={cart} alt="" />
                     <img className='me-4' src={bell} alt="" />
                     <img className='me-4' src={mail} alt="" />
-                    <img className='me-4' src={muka} alt="" />
+                    <img className='me-4' src={muka} alt="" style={{width:"25px",borderRadius:"15px"}} />
                 </div>
                 </Navbar.Collapse>
             </Container>
