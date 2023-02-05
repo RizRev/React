@@ -97,18 +97,25 @@ npm install
 | ------------------------------------------------------------------------------------ |
 | ![My Bag](https://github.com/RizRev/React/blob/main/src/asset/my%20bag.png "My Bag") |
 
+| Payment Checkout                                                                                        |
+| ------------------------------------------------------------------------------------------------------- |
+| ![Payment Checkout](https://github.com/RizRev/React/blob/main/src/asset/Payment.png "Payment Checkout") |
+
 | My Product                                                                                        |
 | ------------------------------------------------------------------------------------------------- |
 | ![My Product](https://github.com/RizRev/React/blob/main/src/asset/add%20product.png "My Product") |
 
-| My Order |
-| -------- |
+| My Order                                                                                   |
+| ------------------------------------------------------------------------------------------ |
+| ![My Order](https://github.com/RizRev/React/blob/main/src/asset/my%20order.png "My Order") |
 
-| ![My Order](https://github.com/RizRev/React/blob/main/src/asset/my%20order.png "My Order")
+| Profile Custommer                                                                                                |
+| ---------------------------------------------------------------------------------------------------------------- |
+| ![Profile Custommer](https://github.com/RizRev/React/blob/main/src/asset/self%20profile.png "Profile Custommer") |
 
-| Profile Custommer                                                                                        |
-| -------------------------------------------------------------------------------------------------------- |
-| ![Profile Custommer](https://github.com/RizRev/React/blob/main/src/asset/profil.png "Profile Custommer") |
+| Profile Store                                                                                             |
+| --------------------------------------------------------------------------------------------------------- |
+| ![Profile Store](https://github.com/RizRev/React/blob/main/src/asset/profile%20store.png "Profile Store") |
 
 ## Related Project
 
