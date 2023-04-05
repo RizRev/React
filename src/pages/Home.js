@@ -21,6 +21,8 @@ export default function Home () {
       <Category />
       <IsiFilter />
       {/* <MyVerticallyCenteredModal /> */}
+          <div class="pubble-app" data-app-id="118932" data-app-identifier="118932"></div>
+<script type="text/javascript" src="https://cdn.chatify.com/javascript/loader.js" defer></script>
     </div>
   )
 }
